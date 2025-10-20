@@ -1,11 +1,11 @@
-Loan Default Prediction – Machine Learning Project
+# Loan Default Prediction – Machine Learning Project
 
 Final Project: Credit Risk Analysis & Default Prediction using Python
 Author: Your Name
 Module: Machine Learning / Data Science
 Class: 4th year – Computer Science (AI/ML/Data Science)
 
- Project Overview
+ # Project Overview
 
 This project focuses on analyzing customer loan data and building a machine learning model to predict whether a borrower will default on their loan.
 
@@ -19,7 +19,7 @@ It includes 3 main parts:
 
 Dataset contains information about customer demographics, income, loan history, credit behavior and repayment status.
 
- 2. Objectives
+# 2. Objectives
 
 💳 Understand factors that affect loan repayment.
 
@@ -33,7 +33,7 @@ Dataset contains information about customer demographics, income, loan history, 
 
 📊 Evaluate models using Accuracy, Precision, Recall, F1-score, ROC-AUC.
 
- 3. Project Structure 
+# 3. Project Structure 
 Loan_Default/
 │
 ├── data/                    # Raw & cleaned datasets (if dataset < 25MB)
@@ -51,7 +51,7 @@ Loan_Default/
 ├── README.md
 └── requirements.txt
 
-📊 4. Dataset Description
+# 4. Dataset Description
 Feature	Description
 loan_id	Unique ID for each loan
 customer_id	Customer identifier
@@ -63,7 +63,7 @@ employment_type	Salaried / Self-employed
 age	Borrower age
 gender	Male / Female
 default	Target (0 = paid, 1 = defaulted)
-📈 5. Machine Learning Models Used
+# 5. Machine Learning Models Used
 
 Logistic Regression
 
@@ -76,7 +76,7 @@ Model evaluation with:
 ✔ ROC-AUC Curve
 ✔ Precision-Recall
 
-🛠 6. Tech Stack & Requirements
+# 6. Tech Stack & Requirements
 Tool/Library	Purpose
 Python	Programming
 Pandas, Numpy	Data processing
@@ -84,13 +84,13 @@ Matplotlib, Seaborn	Visualization
 Scikit-learn	ML models & metrics
 Streamlit	Web deployment
 Jupyter Notebook	Development
-🚀 7. How to Run the Project
+# 7. How to Run the Project
 git clone https://github.com/username/Loan_Default.git
 cd Loan_Default
 pip install -r requirements.txt
 streamlit run app/streamlit_app.py
 
-📚 8. References
+# 8. References
 
 Kaggle Loan Default Datasets
 
