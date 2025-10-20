@@ -1,0 +1,64 @@
+🎯 1. Thông tin định danh & cơ bản:
+ID: Mã định danh duy nhất của từng khoản vay.
+year: Năm thực hiện khoản vay.
+loan_limit: Giới hạn khoản vay ("Yes" hoặc "No" — có vượt giới hạn không).
+Gender: Giới tính của người vay (Male/Female/Unknown).
+approv_in_adv: Có được phê duyệt trước hay không (Yes/No).
+✅ Ý nghĩa: Các cột này giúp định danh khoản vay và người vay, có thể kiểm tra yếu tố giới tính, thời gian có ảnh hưởng gì đến nợ xấu không.
+
+💰 2. Thông tin khoản vay:
+loan_type: Loại hình khoản vay (ví dụ: conventional, FHA, VA...).
+loan_purpose: Mục đích vay (mua nhà, sửa chữa, tái tài trợ...).
+Credit_Worthiness: Đánh giá tín dụng (Good/Bad).
+open_credit: Người vay có khoản vay mở nào khác không (Yes/No).
+loan_amount: Số tiền vay (đơn vị tiền tệ).
+✅ Ý nghĩa: Các cột này ảnh hưởng trực tiếp đến rủi ro khoản vay. Ví dụ, khoản vay lớn hơn với mục đích "tái tài trợ" có thể rủi ro cao hơn.
+
+💸 3. Lãi suất & chi phí vay:
+rate_of_interest: Lãi suất khoản vay (%).
+Interest_rate_spread: Độ chênh lệch lãi suất so với mức chuẩn.
+Upfront_charges: Chi phí trả trước (USD).
+term: Thời hạn vay (tháng hoặc năm).
+✅ Ý nghĩa: Lãi suất và chi phí cao có thể là dấu hiệu rủi ro — người vay cần vay lãi cao có thể là tín dụng kém.
+
+🏘️ 4. Thông tin tài sản đảm bảo:
+Neg_ammortization: Có trả nợ âm không (Yes/No).
+interest_only: Chỉ trả lãi (Yes/No).
+lump_sum_payment: Có thanh toán một lần không (Yes/No).
+property_value: Giá trị tài sản thế chấp (USD).
+construction_type: Loại công trình (Single Family/Manufactured).
+occupancy_type: Loại hình cư trú (Chính chủ/Cho thuê...).
+Secured_by: Tài sản đảm bảo là gì (House/Land...).
+✅ Ý nghĩa: Tài sản đảm bảo giá trị thấp hoặc chỉ trả lãi (interest_only) thường dễ dẫn đến vỡ nợ.
+
+💼 5. Thông tin tài chính & tín dụng:
+total_units: Số lượng đơn vị tài sản (1 căn nhà hay nhiều căn).
+income: Thu nhập của người vay (USD).
+credit_type: Loại tín dụng (ví dụ: Revolving, Mortgage...).
+Credit_Score: Điểm tín dụng của người vay (số càng cao càng tốt).
+co-applicant_credit_type: Loại tín dụng của đồng vay (nếu có).
+age: Tuổi người vay.
+submission_of_application: Cách nộp đơn (Online/Offline).
+LTV (Loan-to-Value): Tỷ lệ khoản vay so với giá trị tài sản thế chấp (%).
+✅ Ý nghĩa: Thu nhập thấp, điểm tín dụng kém, hoặc LTV cao đều là dấu hiệu dễ dẫn đến nợ xấu.
+
+🌍 6. Thông tin địa lý & tình trạng:
+Region: Khu vực nơi người vay sinh sống.
+Security_Type: Loại tài sản bảo đảm (Collaterized/Uncollaterized).
+Status: Trạng thái khoản vay (0: thành công, 1: nợ xấu).
+dtir1 (Debt-to-Income Ratio): Tỷ lệ nợ trên thu nhập (%).
+✅ Ý nghĩa:
+
+Region có thể ảnh hưởng do chi phí sinh hoạt vùng khác nhau.
+Status là cột mục tiêu quan trọng để huấn luyện mô hình.
+dtir1 cao chứng tỏ người vay đang gánh nợ nhiều, dễ vỡ nợ hơn.
+
+
+## ý nghĩa của từng nhãn trong cột object
+
+
+## Các phương pháp giảm các giá trị outliers
+Robust Scaler: Phù hợp khi vẫn muốn dữ liệu trong khoảng giá trị gốc, chỉ cần giảm ảnh hưởng của outliers.
+Quantile/Power Transformer: Hữu ích nếu dữ liệu rất skew (lệch), muốn đưa về phân bố gần chuẩn để mô hình tuyến tính, SVM, KNN... hoạt động hiệu quả hơn.
+Log Transform: Đơn giản, thường dùng cho dữ liệu dương, giảm độ lệch mạnh.
+Winsorizing: Giữ cấu trúc phân bố chính, cắt bớt “đuôi” dữ liệu.
